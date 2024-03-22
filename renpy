@@ -1,0 +1,112 @@
+define bot = Character('???', color="#FF8927")
+define Jeremias = Character('Jeremias', color="#FF0000")
+define juez = Character('juez', color="#FF9578")
+define dinero= 100
+define felicidad= 100
+define ecologia= 100
+define salud= 100
+label start:
+    
+    play music "audio/ciudad.mp3"
+    image casas = "casa"
+    scene casas
+    image Jeremias = "a_feliz"
+    image juez = "a_triste"
+    image bot = "boto"
+    image cocheelect = "cochelec"
+    image cochega = "cochegas"
+    image felizzz = "casa"
+    image felizz = "cochegas"
+    image feliz = "cochelec"
+    image triste = "casa"
+    image tristee = "cochegas"
+    image tristeee = "cochelec" 
+    image sostenibleee = "cochelec"
+    image sosteniblee = "cochelec"
+    image sostenible = "cochelec"
+    image nosost = "cochelec"
+    image nosostt = "cochelec"
+    image nososttt = "cochelec"
+    
+    show bot
+    bot "Hola, bienvenido a Bironment, la ciudad más ecológica del mundo. Aquí tomarás decisiones de acuerdo sobre el desarrollo sostenible."
+    hide bot
+    with dissolve
+    
+    show Jeremias at left
+    Jeremias "Hola soy tu yo en este videojuego, tengo muchas ganas de tomar las mejores decisiones contigo 😀"
+    hide Jeremias
+    with dissolve
+    
+    show juez at right
+    juez "Hola, yo soy el juez que juzgará tus acciones😀"
+    hide juez
+    with dissolve #33 Disolver
+    
+    show bot
+    bot "Bienvenido a tu nueva vida como ciudadano, eres Jeremias y tienes 18 años."
+    "¿Cómo te llamas?"
+    menu:
+        "Jeremias":
+            jump nombre   
+        "No te lo voy a decir 😞":
+            jump nombredos
+    return
+        
+label nombre:
+    bot "Bro encantado de conocerte"
+    show bot
+    bot "Ahora te enfrenatrás a tu primera decisión en este videojuego"
+    show cochega at right
+    show cocheelect at left
+    menu:
+        "Quiero el coche de gasolina":
+            jump nu
+        "Quiero el coche eléctrico":
+            jump na
+    return
+label nombredos:
+    bot "Te presento a tu ciudad"
+    show bot
+    bot "Ahora te enfrenatrás a tu primera decisión en este videojuego"
+    show cochega at right
+    show cocheelect at left
+    menu:
+        "Quiero el coche de gasolina":
+            jump cochegas
+        "Quiero el coche eléctrico":
+            jump cocheelect
+    return
+
+label cochegas:
+    hide cocheelect
+    with dissolve
+    bot "Este coche es más barato, tus padres lo agradecerán. Pero tus niveles de ecología han descendido pero ahora eres más feliz"
+    
+label cocheelect:
+    hide cochega
+    with dissolve
+    show bot
+    bot "Este coche es más ecosostenible pero no te gusta tanto como el otro es verdad. Prefieres conducir un coche de verdad y no un frigorifico con ruedas"
+    
+bot "Después de una noche de jueves movida te despiertas tarde y llegas tarde a la Universidad, vas a coger el nuevo coche de tus padres sin permiso O cogerás el autobús como siempre."
+show bus at left
+show padre at right
+    menu:
+        "Cojo el coche, por una vez no pasa nada.":
+            jump sinpermiso  
+        "Prefiero no arriesgarme, quiero ir a la fiesta de Jessica el fin de semana.":
+            jump autobus
+    return
+    stop music
+    
+label autobus:
+    hide padre
+    with dissolve
+    bot "Has llegado tarde y te han castigado. Tendrás que venir por la tarde a hacer las tareas. ES VIERNES..."
+    stop music
+    
+label sinpermiso:
+    hide bus
+    with dissolve
+    bot "Has llegado sobre la bocina, hoy estás de suerte. Jessica ha estado hablando con sus amigas para hacer una fiesta y te ha invitado. Menos mal que llegaste temprano"
